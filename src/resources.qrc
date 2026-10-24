@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="AccentButton.qml">AccentButton.qml</file>
+        <file alias="BoardCard.qml">BoardCard.qml</file>
+        <file alias="BoardView.qml">BoardView.qml</file>
+        <file alias="CloseDialog.qml">CloseDialog.qml</file>
+        <file alias="ItemPanel.qml">ItemPanel.qml</file>
+        <file alias="LogView.qml">LogView.qml</file>
+        <file alias="Main.qml">Main.qml</file>
+        <file alias="PanelDialog.qml">PanelDialog.qml</file>
+        <file alias="PassDialog.qml">PassDialog.qml</file>
+        <file alias="ProjectPicker.qml">ProjectPicker.qml</file>
+        <file alias="SheetDialog.qml">SheetDialog.qml</file>
+        <file alias="ShortcutHelp.qml">ShortcutHelp.qml</file>
+        <file alias="StartView.qml">StartView.qml</file>
+        <file alias="TabLink.qml">TabLink.qml</file>
+        <file alias="TeamDialog.qml">TeamDialog.qml</file>
+        <file alias="skill.md">skill.md</file>
+        <file alias="i18n/en.json">i18n/en.json</file>
+    </qresource>
+</RCC>

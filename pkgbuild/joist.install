@@ -1,0 +1,4 @@
+post_install() {
+  echo "To be told about overdue items while Joist is closed, run:"
+  echo "  systemctl --user enable --now joist-notify.timer"
+}

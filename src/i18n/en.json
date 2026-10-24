@@ -1,0 +1,11 @@
+{
+  "%n days overdue": { "one": "%n day overdue", "other": "%n days overdue" },
+  "Due in %n days": { "one": "Due in %n day", "other": "Due in %n days" },
+  "%n overdue": { "one": "%n overdue", "other": "%n overdue" },
+  "%n open": { "one": "%n open", "other": "%n open" },
+  "%n items": { "one": "%n item", "other": "%n items" },
+  "%n overdue items": { "one": "%n overdue item", "other": "%n overdue items" },
+  "and %n more": { "one": "and %n more", "other": "and %n more" },
+  "%1 is %n days overdue": { "one": "%1 is %n day overdue", "other": "%1 is %n days overdue" },
+  "days": { "one": "day", "other": "days" }
+}

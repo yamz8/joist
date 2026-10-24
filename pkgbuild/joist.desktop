@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Joist
+Comment=RFI and submittal logs for construction projects
+Exec=joist open
+Icon=joist
+Terminal=false
+Categories=Office;ProjectManagement;
+Keywords=RFI;submittal;construction;ball in court;
+StartupWMClass=joist

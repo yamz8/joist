@@ -1,0 +1,6 @@
+[Unit]
+Description=Announce overdue RFIs and submittals
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/joist notify
