@@ -2,7 +2,14 @@
   "Rev. %1": "مراجعة %1",
   "Untitled": "بدون عنوان",
   "Nobody": "لا أحد",
-  "%n overdue": { "zero": "متأخر: %n", "one": "متأخر: %n", "two": "متأخر: %n", "few": "متأخر: %n", "many": "متأخر: %n", "other": "متأخر: %n" },
+  "%n overdue": {
+    "zero": "متأخر: %n",
+    "one": "متأخر: %n",
+    "two": "متأخر: %n",
+    "few": "متأخر: %n",
+    "many": "متأخر: %n",
+    "other": "متأخر: %n"
+  },
   "No matches": "لا نتائج",
   "Nothing waiting": "لا شيء بالانتظار",
   "Add the project team with T.": "أضف فريق المشروع بالمفتاح T.",
@@ -24,14 +31,35 @@
   "Status": "الحالة",
   "No submittals yet. Press S to log one.": "لا توجد طلبات اعتماد بعد. اضغط S لتسجيل واحد.",
   "No RFIs yet. Press R to log one.": "لا توجد طلبات استيضاح بعد. اضغط R لتسجيل واحد.",
-  "%n items": { "zero": "%n بند", "one": "%n بند", "two": "%n بند", "few": "%n بنود", "many": "%n بندًا", "other": "%n بند" },
-  "%n open": { "zero": "مفتوح: %n", "one": "مفتوح: %n", "two": "مفتوح: %n", "few": "مفتوح: %n", "many": "مفتوح: %n", "other": "مفتوح: %n" },
+  "%n items": {
+    "zero": "%n بند",
+    "one": "%n بند",
+    "two": "%n بند",
+    "few": "%n بنود",
+    "many": "%n بندًا",
+    "other": "%n بند"
+  },
+  "%n open": {
+    "zero": "مفتوح: %n",
+    "one": "مفتوح: %n",
+    "two": "مفتوح: %n",
+    "few": "مفتوح: %n",
+    "many": "مفتوح: %n",
+    "other": "مفتوح: %n"
+  },
   "Hide closed (H)": "إخفاء المغلقة (H)",
   "Show closed (H)": "إظهار المغلقة (H)",
   "Pass %1 to": "تحويل %1 إلى",
   "Add someone else to the team first (T).": "أضف شخصًا آخر إلى الفريق أولًا (T).",
   "Due in": "مستحق خلال",
-  "days": { "zero": "يوم", "one": "يوم", "two": "يوم", "few": "أيام", "many": "يومًا", "other": "يوم" },
+  "days": {
+    "zero": "يوم",
+    "one": "يوم",
+    "two": "يوم",
+    "few": "أيام",
+    "many": "يومًا",
+    "other": "يوم"
+  },
   "Pass": "تحويل",
   "Projects": "المشاريع",
   "New project": "مشروع جديد",
@@ -77,9 +105,23 @@
   "Done": "تم",
   "Closed %1": "أُغلق %1",
   "No due date": "بلا تاريخ استحقاق",
-  "%n days overdue": { "zero": "متأخر %n يوم", "one": "متأخر %n يوم", "two": "متأخر %n يوم", "few": "متأخر %n أيام", "many": "متأخر %n يومًا", "other": "متأخر %n يوم" },
+  "%n days overdue": {
+    "zero": "متأخر %n يوم",
+    "one": "متأخر %n يوم",
+    "two": "متأخر %n يوم",
+    "few": "متأخر %n أيام",
+    "many": "متأخر %n يومًا",
+    "other": "متأخر %n يوم"
+  },
   "Due today": "مستحق اليوم",
-  "Due in %n days": { "zero": "مستحق خلال %n يوم", "one": "مستحق خلال %n يوم", "two": "مستحق خلال %n يوم", "few": "مستحق خلال %n أيام", "many": "مستحق خلال %n يومًا", "other": "مستحق خلال %n يوم" },
+  "Due in %n days": {
+    "zero": "مستحق خلال %n يوم",
+    "one": "مستحق خلال %n يوم",
+    "two": "مستحق خلال %n يوم",
+    "few": "مستحق خلال %n أيام",
+    "many": "مستحق خلال %n يومًا",
+    "other": "مستحق خلال %n يوم"
+  },
   "Exported %1": "تم تصدير %1",
   "Switch project (P)": "تبديل المشروع (P)",
   "RFIs": "طلبات الاستيضاح",
@@ -114,10 +156,31 @@
   "Could not create the folder for %1.": "تعذّر إنشاء المجلد لـ %1.",
   "Could not save %1: %2": "تعذّر حفظ %1: %2",
   "%1 %2 · %3": "%1 %2 · %3",
-  "and %n more": { "zero": "و%n غيرها", "one": "و%n غيره", "two": "و%n غيرها", "few": "و%n أخرى", "many": "و%n أخرى", "other": "و%n أخرى" },
-  "%n overdue items": { "zero": "%n بند متأخر", "one": "%n بند متأخر", "two": "%n بند متأخر", "few": "%n بنود متأخرة", "many": "%n بندًا متأخرًا", "other": "%n بند متأخر" },
+  "and %n more": {
+    "zero": "و%n غيرها",
+    "one": "و%n غيره",
+    "two": "و%n غيرها",
+    "few": "و%n أخرى",
+    "many": "و%n أخرى",
+    "other": "و%n أخرى"
+  },
+  "%n overdue items": {
+    "zero": "%n بند متأخر",
+    "one": "%n بند متأخر",
+    "two": "%n بند متأخر",
+    "few": "%n بنود متأخرة",
+    "many": "%n بندًا متأخرًا",
+    "other": "%n بند متأخر"
+  },
   "%1 is due today": "%1 مستحق اليوم",
-  "%1 is %n days overdue": { "zero": "%1 متأخر %n يوم", "one": "%1 متأخر %n يوم", "two": "%1 متأخر %n يوم", "few": "%1 متأخر %n أيام", "many": "%1 متأخر %n يومًا", "other": "%1 متأخر %n يوم" },
+  "%1 is %n days overdue": {
+    "zero": "%1 متأخر %n يوم",
+    "one": "%1 متأخر %n يوم",
+    "two": "%1 متأخر %n يوم",
+    "few": "%1 متأخر %n أيام",
+    "many": "%1 متأخر %n يومًا",
+    "other": "%1 متأخر %n يوم"
+  },
   "%1\nBall in court: %2\n%3": "%1\nلدى: %2\n%3",
   "Could not send a notification: %1 is not installed.": "تعذّر إرسال إشعار: %1 غير مثبّت.",
   "Could not send a notification: %1": "تعذّر إرسال إشعار: %1",
@@ -170,5 +233,6 @@
   "Export to PDF": "تصدير إلى PDF",
   "RFI and submittal logs for construction projects.": "سجلات طلبات الاستيضاح وطلبات الاعتماد لمشاريع البناء.",
   "The project to open, by name, number, or file.": "المشروع المراد فتحه، بالاسم أو الرقم أو الملف.",
-  "No single project matches \"%1\".": "لا يوجد مشروع واحد يطابق \"%1\"."
+  "No single project matches \"%1\".": "لا يوجد مشروع واحد يطابق \"%1\".",
+  "Open (status)": "مفتوح"
 }

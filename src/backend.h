@@ -104,6 +104,8 @@ public:
     Q_INVOKABLE void reportError(const QString &message);
     // Announces overdue items across every project.
     Q_INVOKABLE void checkOverdue();
+    // Status words come from C++, so a new language re-renders the items.
+    void retranslate() { emit projectChanged(); }
 
 signals:
     void projectsChanged();

@@ -243,7 +243,10 @@ ApplicationWindow {
                     TextField {
                         id: search
                         visible: backend.hasProject
-                        Layout.preferredWidth: 220
+                        // Gives way first when long translations crowd the bar.
+                        Layout.fillWidth: true
+                        Layout.maximumWidth: 220
+                        Layout.minimumWidth: 90
                         implicitHeight: 34
                         topPadding: 6
                         bottomPadding: 6
@@ -418,6 +421,7 @@ ApplicationWindow {
 
     PanelDialog {
         id: deleteDialog
+        width: 440
         title: win.hasItem ? qsTr("Delete %1?").arg(win.selected) : ""
         footer: DialogButtonBox {
             background: Item {}
@@ -427,7 +431,7 @@ ApplicationWindow {
         Label {
             text: qsTr("Its history and sheet links go with it. Ctrl+Z brings it back.")
             wrapMode: Text.Wrap
-            width: 360
+            width: deleteDialog.availableWidth
         }
         onAccepted: {
             backend.deleteItem(win.selected)
