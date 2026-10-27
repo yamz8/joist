@@ -36,10 +36,6 @@
   "Show closed (H)": "完了を表示 (H)",
   "Pass %1 to": "%1 の回付先",
   "Add someone else to the team first (T).": "先に他の関係者を追加してください (T)。",
-  "Due in": "期限まで",
-  "days": {
-    "other": "日"
-  },
   "Pass": "回付",
   "Projects": "プロジェクト",
   "New project": "新規プロジェクト",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "建設プロジェクトの質疑・承認申請台帳。",
   "The project to open, by name, number, or file.": "開くプロジェクト(名前、番号、またはファイル)。",
   "No single project matches \"%1\".": "「%1」に一致するプロジェクトが1件に絞れません。",
-  "Open (status)": "未完了"
+  "Open|status": "未完了"
 }

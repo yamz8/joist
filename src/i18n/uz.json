@@ -39,11 +39,6 @@
   "Show closed (H)": "Yopilganlarni ko‘rsatish (H)",
   "Pass %1 to": "%1 ni kimga topshirish",
   "Add someone else to the team first (T).": "Avval boshqa ishtirokchini qo‘shing (T).",
-  "Due in": "Muddat",
-  "days": {
-    "one": "kun",
-    "other": "kun"
-  },
   "Pass": "Topshirish",
   "Projects": "Loyihalar",
   "New project": "Yangi loyiha",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Qurilish loyihalari uchun so‘rovlar va kelishuv hujjatlari jurnallari.",
   "The project to open, by name, number, or file.": "Ochiladigan loyiha: nomi, raqami yoki fayli bo‘yicha.",
   "No single project matches \"%1\".": "\"%1\" ga aniq bitta loyiha mos kelmadi.",
-  "Open (status)": "Ochiq"
+  "Open|status": "Ochiq"
 }

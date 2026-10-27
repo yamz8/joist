@@ -39,11 +39,6 @@
   "Show closed (H)": "Ipakita ang sarado (H)",
   "Pass %1 to": "Ipasa ang %1 kay",
   "Add someone else to the team first (T).": "Magdagdag muna ng ibang tao sa team (T).",
-  "Due in": "Takdang araw sa loob ng",
-  "days": {
-    "one": "araw",
-    "other": "araw"
-  },
   "Pass": "Ipasa",
   "Projects": "Mga proyekto",
   "New project": "Bagong proyekto",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Mga RFI at submittal log para sa mga proyektong konstruksiyon.",
   "The project to open, by name, number, or file.": "Ang proyektong bubuksan, ayon sa pangalan, numero, o file.",
   "No single project matches \"%1\".": "Walang iisang proyektong tumutugma sa \"%1\".",
-  "Open (status)": "Bukas"
+  "Open|status": "Bukas"
 }

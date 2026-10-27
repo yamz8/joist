@@ -39,11 +39,6 @@
   "Show closed (H)": "Sýna lokuð (H)",
   "Pass %1 to": "Senda %1 áfram til",
   "Add someone else to the team first (T).": "Bættu fyrst einhverjum öðrum í teymið (T).",
-  "Due in": "Frestur eftir",
-  "days": {
-    "one": "dag",
-    "other": "daga"
-  },
   "Pass": "Senda áfram",
   "Projects": "Verkefni",
   "New project": "Nýtt verkefni",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Fyrirspurna- og samþykktaskrár fyrir byggingarverkefni.",
   "The project to open, by name, number, or file.": "Verkefnið sem á að opna, eftir heiti, númeri eða skrá.",
   "No single project matches \"%1\".": "Ekkert eitt verkefni passar við „%1“.",
-  "Open (status)": "Opið"
+  "Open|status": "Opið"
 }

@@ -39,11 +39,6 @@
   "Show closed (H)": "Покажи затворените (H)",
   "Pass %1 to": "Предай %1 на",
   "Add someone else to the team first (T).": "Първо добавете още някого в екипа (T).",
-  "Due in": "Срок след",
-  "days": {
-    "one": "ден",
-    "other": "дни"
-  },
   "Pass": "Предай",
   "Projects": "Проекти",
   "New project": "Нов проект",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Регистри на RFI и документи за одобрение за строителни проекти.",
   "The project to open, by name, number, or file.": "Проектът за отваряне – по име, номер или файл.",
   "No single project matches \"%1\".": "Нито един проект не съответства еднозначно на „%1“.",
-  "Open (status)": "Отворено"
+  "Open|status": "Отворено"
 }

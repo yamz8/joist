@@ -85,7 +85,11 @@ public:
     Q_INVOKABLE QString suggestedRecipient(const QString &code) const;
 
     Q_INVOKABLE QStringList closingActions(const QString &type) const;
+    // Words for the stored values. QML calls these from bindings that also
+    // read translator.language, so a new language rewords them in place.
     Q_INVOKABLE QString actionLabel(const QString &action) const;
+    Q_INVOKABLE QString typeLabel(const QString &type) const;
+    Q_INVOKABLE QString statusLabel(const QVariantMap &item) const;
     Q_INVOKABLE int defaultDays(const QString &type) const { return m_project.defaultDays(type); }
 
     // Picks a drawing set, then asks Lintel for its sheets: sheetsListed.
@@ -104,8 +108,6 @@ public:
     Q_INVOKABLE void reportError(const QString &message);
     // Announces overdue items across every project.
     Q_INVOKABLE void checkOverdue();
-    // Status words come from C++, so a new language re-renders the items.
-    void retranslate() { emit projectChanged(); }
 
 signals:
     void projectsChanged();

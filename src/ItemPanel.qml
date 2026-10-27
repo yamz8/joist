@@ -82,7 +82,7 @@ Rectangle {
                     color: theme.accent
                 }
                 Label {
-                    text: panel.item ? panel.item.typeLabel
+                    text: panel.item ? win.typeText(panel.item.type)
                         + (panel.item.type === "submittal" ? " · " + qsTr("Rev. %1").arg(panel.item.revision) : "") : ""
                     color: "#8a8a94"
                 }
@@ -95,7 +95,7 @@ Rectangle {
                     Label {
                         id: status
                         anchors.centerIn: parent
-                        text: panel.item ? panel.item.status : ""
+                        text: panel.item ? win.statusText(panel.item) : ""
                         font.pixelSize: 12
                         color: !panel.item ? "white" : panel.item.overdue ? "#ff9a9a" : panel.item.open ? "#d8d8de" : "#9ad5a8"
                     }
@@ -126,7 +126,7 @@ Rectangle {
                     Label {
                         Layout.fillWidth: true
                         text: !panel.item ? "" : panel.item.open ? panel.item.ballInCourt
-                            : backend.actionLabel(panel.item.action)
+                            : win.actionText(panel.item.action)
                         font.pixelSize: 22
                         font.bold: true
                         elide: Text.ElideRight
@@ -302,8 +302,8 @@ Rectangle {
                         text: {
                             const e = event.modelData
                             let line = e.from && e.to ? qsTr("%1 → %2").arg(e.from).arg(e.to) : (e.to || e.from)
-                            if (e.actionLabel)
-                                line = e.actionLabel + " · " + line
+                            if (e.action)
+                                line = win.actionText(e.action) + " · " + line
                             return e.note ? line + "\n" + e.note : line
                         }
                     }

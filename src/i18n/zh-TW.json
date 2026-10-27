@@ -36,10 +36,6 @@
   "Show closed (H)": "顯示已結案 (H)",
   "Pass %1 to": "將 %1 轉交給",
   "Add someone else to the team first (T).": "請先加入其他相關單位 (T)。",
-  "Due in": "期限",
-  "days": {
-    "other": "天"
-  },
   "Pass": "轉交",
   "Projects": "專案",
   "New project": "新增專案",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "營建專案的疑義與送審管制表。",
   "The project to open, by name, number, or file.": "要開啟的專案(名稱、編號或檔案)。",
   "No single project matches \"%1\".": "沒有唯一符合「%1」的專案。",
-  "Open (status)": "未結案"
+  "Open|status": "未結案"
 }

@@ -42,12 +42,6 @@
   "Show closed (H)": "Mostra els tancats (H)",
   "Pass %1 to": "Passa %1 a",
   "Add someone else to the team first (T).": "Primer afegiu algú altre a l'equip (T).",
-  "Due in": "Venç d'aquí a",
-  "days": {
-    "one": "dia",
-    "many": "dies",
-    "other": "dies"
-  },
   "Pass": "Passa",
   "Projects": "Projectes",
   "New project": "Projecte nou",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "Registres de RFI i trameses per a projectes de construcció.",
   "The project to open, by name, number, or file.": "El projecte que cal obrir, per nom, número o fitxer.",
   "No single project matches \"%1\".": "Cap projecte no coincideix de manera unívoca amb «%1».",
-  "Open (status)": "Obert"
+  "Open|status": "Obert"
 }

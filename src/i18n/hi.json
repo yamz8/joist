@@ -39,11 +39,6 @@
   "Show closed (H)": "बंद दिखाएँ (H)",
   "Pass %1 to": "%1 किसे सौंपें",
   "Add someone else to the team first (T).": "पहले टीम में किसी और को जोड़ें (T)।",
-  "Due in": "नियत अवधि",
-  "days": {
-    "one": "दिन",
-    "other": "दिन"
-  },
   "Pass": "सौंपें",
   "Projects": "प्रोजेक्ट",
   "New project": "नया प्रोजेक्ट",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "निर्माण परियोजनाओं के लिए RFI और सबमिटल रजिस्टर।",
   "The project to open, by name, number, or file.": "खोलने वाला प्रोजेक्ट, नाम, संख्या या फ़ाइल से।",
   "No single project matches \"%1\".": "कोई एक प्रोजेक्ट \"%1\" से मेल नहीं खाता।",
-  "Open (status)": "खुला"
+  "Open|status": "खुला"
 }

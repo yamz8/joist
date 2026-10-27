@@ -39,11 +39,6 @@
   "Show closed (H)": "نمایش بسته‌ها (H)",
   "Pass %1 to": "ارجاع %1 به",
   "Add someone else to the team first (T).": "ابتدا فرد دیگری به تیم اضافه کنید (T).",
-  "Due in": "مهلت تا",
-  "days": {
-    "one": "روز",
-    "other": "روز"
-  },
   "Pass": "ارجاع",
   "Projects": "پروژه‌ها",
   "New project": "پروژهٔ جدید",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "دفتر استعلام‌های فنی و درخواست‌های تأیید برای پروژه‌های ساختمانی.",
   "The project to open, by name, number, or file.": "پروژه‌ای که باید باز شود، با نام، شماره یا فایل.",
   "No single project matches \"%1\".": "هیچ پروژهٔ یکتایی با «%1» مطابقت ندارد.",
-  "Open (status)": "باز"
+  "Open|status": "باز"
 }

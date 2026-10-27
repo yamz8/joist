@@ -39,11 +39,6 @@
   "Show closed (H)": "மூடியவற்றைக் காட்டு (H)",
   "Pass %1 to": "%1 ஐ ஒப்படை",
   "Add someone else to the team first (T).": "முதலில் குழுவில் வேறொருவரைச் சேர்க்கவும் (T).",
-  "Due in": "கெடு",
-  "days": {
-    "one": "நாள்",
-    "other": "நாட்கள்"
-  },
   "Pass": "ஒப்படை",
   "Projects": "திட்டங்கள்",
   "New project": "புதிய திட்டம்",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "கட்டுமானத் திட்டங்களுக்கான RFI மற்றும் சப்மிட்டல் பதிவேடுகள்.",
   "The project to open, by name, number, or file.": "திறக்க வேண்டிய திட்டம், பெயர், எண் அல்லது கோப்பு மூலம்.",
   "No single project matches \"%1\".": "\"%1\" உடன் ஒரே ஒரு திட்டம் பொருந்தவில்லை.",
-  "Open (status)": "திறந்தது"
+  "Open|status": "திறந்தது"
 }

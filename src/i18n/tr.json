@@ -39,11 +39,6 @@
   "Show closed (H)": "Kapalıları göster (H)",
   "Pass %1 to": "%1 şuna devret:",
   "Add someone else to the team first (T).": "Önce ekibe başka birini ekleyin (T).",
-  "Due in": "Süre",
-  "days": {
-    "one": "gün",
-    "other": "gün"
-  },
   "Pass": "Devret",
   "Projects": "Projeler",
   "New project": "Yeni proje",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "İnşaat projeleri için RFI ve onay sunumu listeleri.",
   "The project to open, by name, number, or file.": "Açılacak proje: ad, numara veya dosya.",
   "No single project matches \"%1\".": "\"%1\" ile eşleşen tek bir proje yok.",
-  "Open (status)": "Açık"
+  "Open|status": "Açık"
 }

@@ -42,12 +42,6 @@
   "Show closed (H)": "Arată închise (H)",
   "Pass %1 to": "Predă %1 către",
   "Add someone else to the team first (T).": "Adăugați mai întâi pe altcineva în echipă (T).",
-  "Due in": "Termen în",
-  "days": {
-    "one": "zi",
-    "few": "zile",
-    "other": "de zile"
-  },
   "Pass": "Predă",
   "Projects": "Proiecte",
   "New project": "Proiect nou",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "Registre de RFI și solicitări de aprobare pentru proiecte de construcții.",
   "The project to open, by name, number, or file.": "Proiectul de deschis, după nume, număr sau fișier.",
   "No single project matches \"%1\".": "Niciun proiect nu corespunde în mod unic cu „%1”.",
-  "Open (status)": "Deschis"
+  "Open|status": "Deschis"
 }

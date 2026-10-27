@@ -48,14 +48,6 @@
   "Show closed (H)": "Taispeáin na cinn dúnta (H)",
   "Pass %1 to": "Seachaid %1 chuig",
   "Add someone else to the team first (T).": "Cuir duine eile leis an bhfoireann ar dtús (T).",
-  "Due in": "Dlite i gceann",
-  "days": {
-    "one": "lá",
-    "two": "lá",
-    "few": "lá",
-    "many": "lá",
-    "other": "lá"
-  },
   "Pass": "Seachaid",
   "Projects": "Tionscadail",
   "New project": "Tionscadal nua",
@@ -225,5 +217,5 @@
   "RFI and submittal logs for construction projects.": "Logaí RFI agus aighneachtaí do thionscadail tógála.",
   "The project to open, by name, number, or file.": "An tionscadal le hoscailt, de réir ainm, uimhir nó comhad.",
   "No single project matches \"%1\".": "Níl aon tionscadal amháin a mheaitseálann \"%1\".",
-  "Open (status)": "Oscailte"
+  "Open|status": "Oscailte"
 }

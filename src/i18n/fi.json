@@ -39,11 +39,6 @@
   "Show closed (H)": "Näytä suljetut (H)",
   "Pass %1 to": "Siirrä %1 osapuolelle",
   "Add someone else to the team first (T).": "Lisää ensin ryhmään joku muu (T).",
-  "Due in": "Määräaika",
-  "days": {
-    "one": "päivän päästä",
-    "other": "päivän päästä"
-  },
   "Pass": "Siirrä",
   "Projects": "Projektit",
   "New project": "Uusi projekti",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Tietopyyntö- ja hyväksyntäluettelot rakennusprojekteille.",
   "The project to open, by name, number, or file.": "Avattava projekti nimen, numeron tai tiedoston mukaan.",
   "No single project matches \"%1\".": "Mikään yksittäinen projekti ei vastaa hakua ”%1”.",
-  "Open (status)": "Avoin"
+  "Open|status": "Avoin"
 }

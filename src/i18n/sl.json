@@ -45,13 +45,6 @@
   "Show closed (H)": "Prikaži zaprte (H)",
   "Pass %1 to": "Predaj %1:",
   "Add someone else to the team first (T).": "Najprej v ekipo dodajte še nekoga (T).",
-  "Due in": "Rok čez",
-  "days": {
-    "one": "dan",
-    "two": "dneva",
-    "few": "dni",
-    "other": "dni"
-  },
   "Pass": "Predaj",
   "Projects": "Projekti",
   "New project": "Nov projekt",
@@ -216,5 +209,5 @@
   "RFI and submittal logs for construction projects.": "Evidence RFI in gradiv v potrditev za gradbene projekte.",
   "The project to open, by name, number, or file.": "Projekt, ki ga želite odpreti, po imenu, številki ali datoteki.",
   "No single project matches \"%1\".": "Noben posamezen projekt se ne ujema s »%1«.",
-  "Open (status)": "Odprto"
+  "Open|status": "Odprto"
 }

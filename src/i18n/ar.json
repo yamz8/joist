@@ -51,15 +51,6 @@
   "Show closed (H)": "إظهار المغلقة (H)",
   "Pass %1 to": "تحويل %1 إلى",
   "Add someone else to the team first (T).": "أضف شخصًا آخر إلى الفريق أولًا (T).",
-  "Due in": "مستحق خلال",
-  "days": {
-    "zero": "يوم",
-    "one": "يوم",
-    "two": "يوم",
-    "few": "أيام",
-    "many": "يومًا",
-    "other": "يوم"
-  },
   "Pass": "تحويل",
   "Projects": "المشاريع",
   "New project": "مشروع جديد",
@@ -234,5 +225,5 @@
   "RFI and submittal logs for construction projects.": "سجلات طلبات الاستيضاح وطلبات الاعتماد لمشاريع البناء.",
   "The project to open, by name, number, or file.": "المشروع المراد فتحه، بالاسم أو الرقم أو الملف.",
   "No single project matches \"%1\".": "لا يوجد مشروع واحد يطابق \"%1\".",
-  "Open (status)": "مفتوح"
+  "Open|status": "مفتوح"
 }

@@ -61,9 +61,16 @@ PanelDialog {
             }
         }
 
+        // The language's own "Due in %n days", split around the number box,
+        // so every language keeps its word order.
         RowLayout {
             spacing: 10
-            Label { text: qsTr("Due in") }
+            readonly property string sentence: qsTr("Due in %n days", "", days.value)
+            readonly property int at: sentence.indexOf(String(days.value))
+            Label {
+                text: parent.at < 0 ? parent.sentence : parent.sentence.substring(0, parent.at).trim()
+                visible: text !== ""
+            }
             SpinBox {
                 id: days
                 from: 0
@@ -71,7 +78,10 @@ PanelDialog {
                 editable: true
                 Keys.onReturnPressed: dialog.accept()
             }
-            Label { text: qsTr("days", "", days.value) }
+            Label {
+                text: parent.at < 0 ? "" : parent.sentence.substring(parent.at + String(days.value).length).trim()
+                visible: text !== ""
+            }
         }
 
         TextField {

@@ -36,10 +36,6 @@
   "Show closed (H)": "Tampilkan yang selesai (H)",
   "Pass %1 to": "Teruskan %1 ke",
   "Add someone else to the team first (T).": "Tambahkan pihak lain terlebih dahulu (T).",
-  "Due in": "Tenggat dalam",
-  "days": {
-    "other": "hari"
-  },
   "Pass": "Teruskan",
   "Projects": "Proyek",
   "New project": "Proyek baru",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "Log RFI dan pengajuan untuk proyek konstruksi.",
   "The project to open, by name, number, or file.": "Proyek yang akan dibuka, menurut nama, nomor, atau berkas.",
   "No single project matches \"%1\".": "Tidak ada satu proyek pun yang cocok tepat dengan \"%1\".",
-  "Open (status)": "Terbuka"
+  "Open|status": "Terbuka"
 }

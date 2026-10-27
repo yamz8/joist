@@ -52,7 +52,7 @@ PanelDialog {
                 required property int index
                 width: list.width
                 highlighted: ListView.isCurrentItem
-                text: (index + 1) + "   " + backend.actionLabel(modelData)
+                text: (index + 1) + "   " + win.actionText(modelData)
                 onClicked: list.currentIndex = index
             }
         }

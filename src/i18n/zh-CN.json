@@ -36,10 +36,6 @@
   "Show closed (H)": "显示已关闭 (H)",
   "Pass %1 to": "将 %1 转交给",
   "Add someone else to the team first (T).": "请先添加其他参建方 (T)。",
-  "Due in": "期限",
-  "days": {
-    "other": "天"
-  },
   "Pass": "转交",
   "Projects": "项目",
   "New project": "新建项目",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "建设工程 RFI 与报审台账。",
   "The project to open, by name, number, or file.": "要打开的项目(名称、编号或文件)。",
   "No single project matches \"%1\".": "没有唯一匹配“%1”的项目。",
-  "Open (status)": "未关闭"
+  "Open|status": "未关闭"
 }

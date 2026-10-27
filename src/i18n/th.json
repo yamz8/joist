@@ -36,10 +36,6 @@
   "Show closed (H)": "แสดงที่ปิดแล้ว (H)",
   "Pass %1 to": "ส่งต่อ %1 ให้",
   "Add someone else to the team first (T).": "เพิ่มผู้เกี่ยวข้องรายอื่นก่อน (T)",
-  "Due in": "ครบกำหนดใน",
-  "days": {
-    "other": "วัน"
-  },
   "Pass": "ส่งต่อ",
   "Projects": "โครงการ",
   "New project": "โครงการใหม่",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "ทะเบียน RFI และเอกสารขออนุมัติสำหรับโครงการก่อสร้าง",
   "The project to open, by name, number, or file.": "โครงการที่จะเปิด ระบุด้วยชื่อ เลขที่ หรือไฟล์",
   "No single project matches \"%1\".": "ไม่มีโครงการเดียวที่ตรงกับ \"%1\"",
-  "Open (status)": "เปิดอยู่"
+  "Open|status": "เปิดอยู่"
 }

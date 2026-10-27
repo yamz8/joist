@@ -39,11 +39,6 @@
   "Show closed (H)": "Vis lukkede (H)",
   "Pass %1 to": "Send %1 videre til",
   "Add someone else to the team first (T).": "Tilføj først en anden til teamet (T).",
-  "Due in": "Frist om",
-  "days": {
-    "one": "dag",
-    "other": "dage"
-  },
   "Pass": "Send videre",
   "Projects": "Projekter",
   "New project": "Nyt projekt",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "RFI- og godkendelseslogs til byggeprojekter.",
   "The project to open, by name, number, or file.": "Projektet, der skal åbnes, efter navn, nummer eller fil.",
   "No single project matches \"%1\".": "Intet entydigt projekt matcher »%1«.",
-  "Open (status)": "Åben"
+  "Open|status": "Åben"
 }

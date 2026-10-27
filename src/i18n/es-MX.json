@@ -42,12 +42,6 @@
   "Show closed (H)": "Mostrar cerrados (H)",
   "Pass %1 to": "Turnar %1 a",
   "Add someone else to the team first (T).": "Primero agrega a alguien más al equipo (T).",
-  "Due in": "Vence en",
-  "days": {
-    "one": "día",
-    "many": "días",
-    "other": "días"
-  },
   "Pass": "Turnar",
   "Projects": "Proyectos",
   "New project": "Nuevo proyecto",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "Bitácoras de RFI y remisiones para proyectos de construcción.",
   "The project to open, by name, number, or file.": "El proyecto que se abrirá, por nombre, número o archivo.",
   "No single project matches \"%1\".": "No hay un único proyecto que coincida con \"%1\".",
-  "Open (status)": "Abierto"
+  "Open|status": "Abierto"
 }

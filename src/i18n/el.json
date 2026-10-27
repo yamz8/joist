@@ -39,11 +39,6 @@
   "Show closed (H)": "Εμφάνιση κλειστών (H)",
   "Pass %1 to": "Διαβίβαση %1 σε",
   "Add someone else to the team first (T).": "Προσθέστε πρώτα κάποιον άλλον στην ομάδα (T).",
-  "Due in": "Προθεσμία σε",
-  "days": {
-    "one": "ημέρα",
-    "other": "ημέρες"
-  },
   "Pass": "Διαβίβαση",
   "Projects": "Έργα",
   "New project": "Νέο έργο",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Μητρώα RFI και υποβολών για κατασκευαστικά έργα.",
   "The project to open, by name, number, or file.": "Το έργο προς άνοιγμα, με όνομα, αριθμό ή αρχείο.",
   "No single project matches \"%1\".": "Κανένα μεμονωμένο έργο δεν ταιριάζει με «%1».",
-  "Open (status)": "Ανοιχτό"
+  "Open|status": "Ανοιχτό"
 }

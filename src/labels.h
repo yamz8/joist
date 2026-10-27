@@ -12,4 +12,5 @@ QString action(const QString &action);
 QString type(const QString &type);
 // "Open", "Overdue", or how it closed.
 QString status(const Item &item, const QDate &today);
+QString status(bool open, bool overdue, const QString &action);
 }

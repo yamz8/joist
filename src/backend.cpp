@@ -333,8 +333,7 @@ QVariantMap Backend::itemMap(const Item &item) const {
     QVariantList history;
     for (const Event &event : item.history)
         history.append(QVariantMap{{"date", event.date.toString(Qt::ISODate)}, {"from", event.from},
-                                   {"to", event.to}, {"note", event.note}, {"action", event.action},
-                                   {"actionLabel", event.action.isEmpty() ? QString() : Labels::action(event.action)}});
+                                   {"to", event.to}, {"note", event.note}, {"action", event.action}});
     QVariantList sheets;
     for (const SheetLink &link : item.sheets)
         sheets.append(QVariantMap{{"file", link.file}, {"fileName", QFileInfo(link.file).fileName()},
@@ -342,7 +341,6 @@ QVariantMap Backend::itemMap(const Item &item) const {
     const QDate held = item.history.isEmpty() ? item.created : item.history.last().date;
     return {{"code", item.code()},
             {"type", item.type},
-            {"typeLabel", Labels::type(item.type)},
             {"number", item.number},
             {"revision", item.revision},
             {"title", item.title},
@@ -356,7 +354,6 @@ QVariantMap Backend::itemMap(const Item &item) const {
             {"ballInCourt", item.ballInCourt},
             {"originator", item.originator()},
             {"action", item.action},
-            {"status", Labels::status(item, today())},
             {"open", item.isOpen()},
             {"overdue", item.isOverdue(today())},
             {"daysLeft", item.due.isValid() ? QVariant(int(today().daysTo(item.due))) : QVariant()},
@@ -519,6 +516,12 @@ void Backend::deleteItem(const QString &code) {
 QStringList Backend::closingActions(const QString &type) const { return ::closingActions(type); }
 
 QString Backend::actionLabel(const QString &action) const { return Labels::action(action); }
+
+QString Backend::typeLabel(const QString &type) const { return Labels::type(type); }
+
+QString Backend::statusLabel(const QVariantMap &item) const {
+    return Labels::status(item["open"].toBool(), item["overdue"].toBool(), item["action"].toString());
+}
 
 // Lintel ---------------------------------------------------------------------
 

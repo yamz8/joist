@@ -22,10 +22,13 @@ QString Labels::type(const QString &type) {
 }
 
 QString Labels::status(const Item &item, const QDate &today) {
-    if (!item.isOpen())
-        return action(item.action);
-    // "Open" is also a verb on buttons, which many languages say differently,
-    // so the status has its own key; en.json maps it back to "Open".
-    return item.isOverdue(today) ? QCoreApplication::translate("Labels", "Overdue")
-                                 : QCoreApplication::translate("Labels", "Open (status)");
+    return status(item.isOpen(), item.isOverdue(today), item.action);
+}
+
+QString Labels::status(bool open, bool overdue, const QString &closedAs) {
+    if (!open)
+        return action(closedAs);
+    // "Open" is also a verb on buttons, which many languages say differently.
+    return overdue ? QCoreApplication::translate("Labels", "Overdue")
+                   : QCoreApplication::translate("Labels", "Open", "status");
 }

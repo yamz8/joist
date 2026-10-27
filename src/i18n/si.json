@@ -39,11 +39,6 @@
   "Show closed (H)": "වසා ඇති ඒවා පෙන්වන්න (H)",
   "Pass %1 to": "%1 භාර දෙන්න",
   "Add someone else to the team first (T).": "පළමුව කණ්ඩායමට වෙනත් අයෙකු එක් කරන්න (T).",
-  "Due in": "නියමිත කාලය",
-  "days": {
-    "one": "දිනය",
-    "other": "දින"
-  },
   "Pass": "භාර දෙන්න",
   "Projects": "ව්‍යාපෘති",
   "New project": "නව ව්‍යාපෘතිය",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "ඉදිකිරීම් ව්‍යාපෘති සඳහා RFI සහ සබ්මිටල් ලේඛන.",
   "The project to open, by name, number, or file.": "විවෘත කළ යුතු ව්‍යාපෘතිය, නම, අංකය හෝ ගොනුව අනුව.",
   "No single project matches \"%1\".": "\"%1\" ට ගැළපෙන තනි ව්‍යාපෘතියක් නැත.",
-  "Open (status)": "විවෘත"
+  "Open|status": "විවෘත"
 }

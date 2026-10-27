@@ -39,11 +39,6 @@
   "Show closed (H)": "Näita suletud (H)",
   "Pass %1 to": "Anna %1 üle osapoolele",
   "Add someone else to the team first (T).": "Lisa esmalt meeskonda keegi teine (T).",
-  "Due in": "Tähtaeg",
-  "days": {
-    "one": "päeva pärast",
-    "other": "päeva pärast"
-  },
   "Pass": "Anna üle",
   "Projects": "Projektid",
   "New project": "Uus projekt",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Infopäringute ja kooskõlastuste registrid ehitusprojektidele.",
   "The project to open, by name, number, or file.": "Avatav projekt nime, numbri või faili järgi.",
   "No single project matches \"%1\".": "Ükski üksik projekt ei vasta päringule „%1“.",
-  "Open (status)": "Avatud"
+  "Open|status": "Avatud"
 }

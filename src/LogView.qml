@@ -16,7 +16,7 @@ Item {
         if (item.type !== type || (!showClosed && !item.open))
             return false
         const text = filter.trim().toLowerCase()
-        return text === "" || [item.code, item.title, item.spec, item.ballInCourt, item.status]
+        return text === "" || [item.code, item.title, item.spec, item.ballInCourt, win.statusText(item)]
             .some(value => value.toLowerCase().indexOf(text) >= 0)
     })
     readonly property var codes: rows.map(item => item.code)
@@ -156,7 +156,7 @@ Item {
                     }
                     Cell {
                         Layout.preferredWidth: log.widths.status
-                        text: row.modelData.status
+                        text: win.statusText(row.modelData)
                         color: row.modelData.overdue ? "#ff6b6b" : row.modelData.open ? "#d8d8de" : "#9a9aa4"
                     }
                 }

@@ -42,12 +42,6 @@
   "Show closed (H)": "הצגת סגורים (H)",
   "Pass %1 to": "העברת %1 אל",
   "Add someone else to the team first (T).": "הוסיפו קודם גורם נוסף לצוות (T).",
-  "Due in": "יעד בעוד",
-  "days": {
-    "one": "יום",
-    "two": "ימים",
-    "other": "ימים"
-  },
   "Pass": "העברה",
   "Projects": "פרויקטים",
   "New project": "פרויקט חדש",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "יומני RFI והגשות לאישור לפרויקטי בנייה.",
   "The project to open, by name, number, or file.": "הפרויקט לפתיחה, לפי שם, מספר או קובץ.",
   "No single project matches \"%1\".": "אין פרויקט יחיד שתואם ל־\"%1\".",
-  "Open (status)": "פתוח"
+  "Open|status": "פתוח"
 }

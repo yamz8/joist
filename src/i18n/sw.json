@@ -39,11 +39,6 @@
   "Show closed (H)": "Onyesha vilivyofungwa (H)",
   "Pass %1 to": "Kabidhi %1 kwa",
   "Add someone else to the team first (T).": "Kwanza ongeza mtu mwingine kwenye timu (T).",
-  "Due in": "Mwisho baada ya",
-  "days": {
-    "one": "siku",
-    "other": "siku"
-  },
   "Pass": "Kabidhi",
   "Projects": "Miradi",
   "New project": "Mradi mpya",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "Rejista za RFI na mawasilisho kwa miradi ya ujenzi.",
   "The project to open, by name, number, or file.": "Mradi wa kufungua, kwa jina, namba au faili.",
   "No single project matches \"%1\".": "Hakuna mradi mmoja unaolingana na \"%1\".",
-  "Open (status)": "Wazi"
+  "Open|status": "Wazi"
 }

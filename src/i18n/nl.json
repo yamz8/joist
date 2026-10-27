@@ -39,11 +39,6 @@
   "Show closed (H)": "Gesloten tonen (H)",
   "Pass %1 to": "%1 doorzetten naar",
   "Add someone else to the team first (T).": "Voeg eerst iemand anders toe aan het team (T).",
-  "Due in": "Deadline over",
-  "days": {
-    "one": "dag",
-    "other": "dagen"
-  },
   "Pass": "Doorzetten",
   "Projects": "Projecten",
   "New project": "Nieuw project",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "RFI- en goedkeuringslogs voor bouwprojecten.",
   "The project to open, by name, number, or file.": "Het te openen project, op naam, nummer of bestand.",
   "No single project matches \"%1\".": "Geen eenduidig project komt overeen met ‘%1’.",
-  "Open (status)": "Open"
+  "Open|status": "Open"
 }

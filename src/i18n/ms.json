@@ -36,10 +36,6 @@
   "Show closed (H)": "Tunjuk yang ditutup (H)",
   "Pass %1 to": "Serah %1 kepada",
   "Add someone else to the team first (T).": "Tambah pihak lain dahulu (T).",
-  "Due in": "Tamat dalam",
-  "days": {
-    "other": "hari"
-  },
   "Pass": "Serah",
   "Projects": "Projek",
   "New project": "Projek baharu",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "Log RFI dan serahan untuk projek pembinaan.",
   "The project to open, by name, number, or file.": "Projek untuk dibuka, mengikut nama, nombor atau fail.",
   "No single project matches \"%1\".": "Tiada satu projek pun yang sepadan tepat dengan \"%1\".",
-  "Open (status)": "Terbuka"
+  "Open|status": "Terbuka"
 }

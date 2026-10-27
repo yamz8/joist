@@ -42,12 +42,6 @@
   "Show closed (H)": "Mostrar encerrados (H)",
   "Pass %1 to": "Encaminhar %1 para",
   "Add someone else to the team first (T).": "Primeiro adicione outra pessoa à equipe (T).",
-  "Due in": "Prazo em",
-  "days": {
-    "one": "dia",
-    "many": "dias",
-    "other": "dias"
-  },
   "Pass": "Encaminhar",
   "Projects": "Projetos",
   "New project": "Novo projeto",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "Controle de RFIs e submissões para obras de construção.",
   "The project to open, by name, number, or file.": "O projeto a abrir, por nome, número ou arquivo.",
   "No single project matches \"%1\".": "Nenhum projeto corresponde de forma única a \"%1\".",
-  "Open (status)": "Aberto"
+  "Open|status": "Aberto"
 }

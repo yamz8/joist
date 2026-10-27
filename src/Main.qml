@@ -41,6 +41,19 @@ ApplicationWindow {
         return new Date(iso + "T00:00:00").toLocaleDateString(Qt.locale(), Locale.ShortFormat)
     }
 
+    // The words for an item's state, reworded when the language changes.
+    function statusText(item) {
+        return translator.language !== "" ? backend.statusLabel(item) : ""
+    }
+
+    function typeText(type) {
+        return translator.language !== "" ? backend.typeLabel(type) : ""
+    }
+
+    function actionText(action) {
+        return translator.language !== "" && action ? backend.actionLabel(action) : ""
+    }
+
     function dueText(item) {
         if (!item.open)
             return qsTr("Closed %1").arg(date(item.closed))
@@ -244,7 +257,10 @@ ApplicationWindow {
                         id: search
                         visible: backend.hasProject
                         // Gives way first when long translations crowd the bar.
+                        // Only filling items can shrink in a layout; the maximum
+                        // keeps it at 220 when there's room.
                         Layout.fillWidth: true
+                        Layout.preferredWidth: 220
                         Layout.maximumWidth: 220
                         Layout.minimumWidth: 90
                         implicitHeight: 34

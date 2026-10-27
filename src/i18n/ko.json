@@ -36,10 +36,6 @@
   "Show closed (H)": "종결 보기 (H)",
   "Pass %1 to": "%1 이관 대상",
   "Add someone else to the team first (T).": "먼저 다른 관계자를 추가하세요 (T).",
-  "Due in": "기한까지",
-  "days": {
-    "other": "일"
-  },
   "Pass": "이관",
   "Projects": "프로젝트",
   "New project": "새 프로젝트",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "건설 프로젝트용 질의서·승인요청서 대장.",
   "The project to open, by name, number, or file.": "열 프로젝트(이름, 번호 또는 파일).",
   "No single project matches \"%1\".": "\"%1\"과(와) 일치하는 프로젝트를 하나로 특정할 수 없습니다.",
-  "Open (status)": "진행 중"
+  "Open|status": "진행 중"
 }

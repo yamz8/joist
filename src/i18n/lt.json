@@ -42,12 +42,6 @@
   "Show closed (H)": "Rodyti uždarytus (H)",
   "Pass %1 to": "Perduoti %1",
   "Add someone else to the team first (T).": "Pirmiausia pridėkite į komandą dar ką nors (T).",
-  "Due in": "Terminas po",
-  "days": {
-    "one": "dienos",
-    "few": "dienų",
-    "other": "dienų"
-  },
   "Pass": "Perduoti",
   "Projects": "Projektai",
   "New project": "Naujas projektas",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "Statybos projektų užklausų ir derinimų žurnalai.",
   "The project to open, by name, number, or file.": "Atveriamas projektas pagal pavadinimą, numerį arba failą.",
   "No single project matches \"%1\".": "Nė vienas projektas vienareikšmiškai neatitinka „%1“.",
-  "Open (status)": "Atviras"
+  "Open|status": "Atviras"
 }

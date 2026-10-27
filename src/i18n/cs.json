@@ -42,12 +42,6 @@
   "Show closed (H)": "Zobrazit uzavřené (H)",
   "Pass %1 to": "Předat %1 komu",
   "Add someone else to the team first (T).": "Nejprve přidejte do týmu někoho dalšího (T).",
-  "Due in": "Termín za",
-  "days": {
-    "one": "den",
-    "few": "dny",
-    "other": "dní"
-  },
   "Pass": "Předat",
   "Projects": "Projekty",
   "New project": "Nový projekt",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "Evidence RFI a podkladů ke schválení pro stavební projekty.",
   "The project to open, by name, number, or file.": "Projekt k otevření podle názvu, čísla nebo souboru.",
   "No single project matches \"%1\".": "Žádný projekt neodpovídá jednoznačně „%1“.",
-  "Open (status)": "Otevřené"
+  "Open|status": "Otevřené"
 }

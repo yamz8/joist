@@ -36,10 +36,6 @@
   "Show closed (H)": "Hiện mục đã đóng (H)",
   "Pass %1 to": "Chuyển %1 cho",
   "Add someone else to the team first (T).": "Hãy thêm một bên khác trước (T).",
-  "Due in": "Hạn sau",
-  "days": {
-    "other": "ngày"
-  },
   "Pass": "Chuyển",
   "Projects": "Dự án",
   "New project": "Dự án mới",
@@ -189,5 +185,5 @@
   "RFI and submittal logs for construction projects.": "Sổ theo dõi RFI và hồ sơ trình duyệt cho dự án xây dựng.",
   "The project to open, by name, number, or file.": "Dự án cần mở, theo tên, số hoặc tệp.",
   "No single project matches \"%1\".": "Không có dự án duy nhất nào khớp với \"%1\".",
-  "Open (status)": "Đang mở"
+  "Open|status": "Đang mở"
 }

@@ -6,6 +6,7 @@
 
 #include "backend.h"
 #include "filepicker.h"
+#include "labels.h"
 #include "notifier.h"
 #include "pdfexport.h"
 #include "project.h"
@@ -343,25 +344,100 @@ private slots:
         QVERIFY(translator.translate("Main", "Quit").isNull());
     }
 
+    void translatorTellsMeaningsApart()
+    {
+        QTemporaryDir dir;
+        write(dir.path() + "/language", "da\n");
+        write(dir.path() + "/da.json", R"({"Open": "Åbn", "Open|status": "Åben"})");
+        Translator translator(dir.path() + "/language", dir.path());
+        QCOMPARE(translator.translate("Labels", "Open", "status"), QString("Åben"));
+        QCOMPARE(translator.translate("ItemPanel", "Open"), QString("Åbn"));
+        // A meaning the catalog doesn't separate falls back to the word.
+        QCOMPARE(translator.translate("Labels", "Open", "verb"), QString("Åbn"));
+    }
+
+    void statusesReadInEnglishWithoutCatalogs()
+    {
+        Item item;
+        item.due = today.addDays(1);
+        QCOMPARE(Labels::status(item, today), QString("Open"));
+        QCOMPARE(Labels::status(item, today.addDays(2)), QString("Overdue"));
+        item.closed = today;
+        item.action = "approved-as-noted";
+        QCOMPARE(Labels::status(item, today), QString("Approved as noted"));
+    }
+
     void bundledCatalogsAreValid()
     {
-        // Every shipped catalog parses, and keeps each %1 its English has.
+        // Every shipped catalog parses, keeps each placeholder its English
+        // has, and gives every plural form the language's counts can need.
         const QDir catalogs(QStringLiteral(SRCDIR) + "/i18n");
         const QStringList files = catalogs.entryList({"*.json"});
-        QVERIFY(files.contains("en.json"));
+        QCOMPARE(files.size(), 50);
         for (const QString &name : files) {
+            const QString language = name.chopped(5);
             QFile file(catalogs.filePath(name));
             QVERIFY(file.open(QIODevice::ReadOnly));
             QJsonParseError parse;
             const QJsonObject object = QJsonDocument::fromJson(file.readAll(), &parse).object();
             QVERIFY2(parse.error == QJsonParseError::NoError, qPrintable(name + ": " + parse.errorString()));
+
+            QSet<QString> categories;
+            for (int n = 0; n <= 2000; ++n)
+                categories.insert(Translator::pluralCategory(language, n));
+
             for (auto it = object.begin(); it != object.end(); ++it) {
-                if (!it.value().isString())
+                const QString key = it.key().section('|', 0, 0);
+                const auto placeholders = [&](const QString &text, const QString &where) {
+                    for (const QString &marker : {"%1", "%2", "%3", "%n"})
+                        QVERIFY2(key.contains(marker) == text.contains(marker),
+                                 qPrintable(name + ": " + where + " " + it.key() + " → " + text));
+                };
+                if (it.value().isString()) {
+                    placeholders(it.value().toString(), "string");
                     continue;
-                for (const QString &marker : {"%1", "%2", "%3"})
-                    QVERIFY2(it.key().contains(marker) == it.value().toString().contains(marker),
-                             qPrintable(name + ": " + it.key()));
+                }
+                QVERIFY2(it.value().isObject(), qPrintable(name + ": " + it.key()));
+                const QJsonObject forms = it.value().toObject();
+                for (const QString &category : categories)
+                    QVERIFY2(!forms.value(category).toString().isEmpty(),
+                             qPrintable(name + ": " + it.key() + " lacks " + category));
+                for (auto form = forms.begin(); form != forms.end(); ++form)
+                    placeholders(form.value().toString(), form.key());
             }
+        }
+    }
+
+    void everyCatalogIsCompiledIn()
+    {
+        const QStringList shipped = QDir(QStringLiteral(SRCDIR) + "/i18n").entryList({"*.json"});
+        const QStringList compiled = QDir(":/i18n").entryList({"*.json"});
+        QCOMPARE(compiled, shipped);
+    }
+
+    void launcherCommentsMatchTheCatalogs()
+    {
+        // bin/desktop-comments writes these; this catches a catalog changed
+        // without rerunning it.
+        QFile desktop(QStringLiteral(SRCDIR) + "/../pkgbuild/joist.desktop");
+        QVERIFY(desktop.open(QIODevice::ReadOnly));
+        QHash<QString, QString> comments;
+        for (const QString &line : QString::fromUtf8(desktop.readAll()).split('\n'))
+            if (line.startsWith("Comment["))
+                comments.insert(line.section('[', 1).section(']', 0, 0), line.section('=', 1));
+
+        const QDir catalogs(QStringLiteral(SRCDIR) + "/i18n");
+        for (const QString &name : catalogs.entryList({"*.json"})) {
+            const QString code = name.chopped(5);
+            if (code == "en")
+                continue;
+            QFile file(catalogs.filePath(name));
+            QVERIFY(file.open(QIODevice::ReadOnly));
+            QString text = QJsonDocument::fromJson(file.readAll()).object()
+                               .value("RFI and submittal logs for construction projects.").toString().trimmed();
+            text.remove(QRegularExpression("[.。।۔]\\s*$"));
+            const QString key = code == "no" ? QString("nb") : QString(code).replace('-', '_');
+            QVERIFY2(comments.value(key) == text, qPrintable(key + ": run bin/desktop-comments"));
         }
     }
 };

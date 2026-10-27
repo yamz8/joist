@@ -39,11 +39,6 @@
   "Show closed (H)": "Lezártak megjelenítése (H)",
   "Pass %1 to": "%1 átadása:",
   "Add someone else to the team first (T).": "Előbb vegyen fel valaki mást is a csapatba (T).",
-  "Due in": "Határidő",
-  "days": {
-    "one": "nap",
-    "other": "nap"
-  },
   "Pass": "Átadás",
   "Projects": "Projektek",
   "New project": "Új projekt",
@@ -198,5 +193,5 @@
   "RFI and submittal logs for construction projects.": "RFI- és jóváhagyási naplók építési projektekhez.",
   "The project to open, by name, number, or file.": "A megnyitandó projekt neve, száma vagy fájlja.",
   "No single project matches \"%1\".": "Egyetlen projekt sem egyezik egyértelműen ezzel: „%1”.",
-  "Open (status)": "Nyitott"
+  "Open|status": "Nyitott"
 }

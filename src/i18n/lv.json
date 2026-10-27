@@ -42,12 +42,6 @@
   "Show closed (H)": "Rādīt slēgtos (H)",
   "Pass %1 to": "Nodot %1",
   "Add someone else to the team first (T).": "Vispirms pievienojiet komandai vēl kādu (T).",
-  "Due in": "Termiņš pēc",
-  "days": {
-    "zero": "dienām",
-    "one": "dienas",
-    "other": "dienām"
-  },
   "Pass": "Nodot",
   "Projects": "Projekti",
   "New project": "Jauns projekts",
@@ -207,5 +201,5 @@
   "RFI and submittal logs for construction projects.": "RFI un saskaņojumu žurnāli būvprojektiem.",
   "The project to open, by name, number, or file.": "Atveramais projekts pēc nosaukuma, numura vai faila.",
   "No single project matches \"%1\".": "Neviens konkrēts projekts neatbilst “%1”.",
-  "Open (status)": "Atvērts"
+  "Open|status": "Atvērts"
 }
