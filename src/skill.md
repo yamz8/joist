@@ -20,7 +20,7 @@ joist new "Harbor Clinic" -n 2417 --party "Contractor" --party "Architect" --par
 joist list -p 2417 --open --json            # also --overdue, --type rfi, --holder Architect
 joist show RFI-3 -p 2417 --json             # with history and linked sheets
 joist add rfi "Slab edge at grid C" -p 2417 -q "Detail 5/S-301 conflicts with..." --spec "03 30 00"
-joist add submittal "Rebar shop drawings" -p 2417 --to "Structural Engineer" --due-in 10
+joist add submittal "Rebar shop drawings" -p 2417 --to Owner --due-in 10
 joist pass RFI-3 Architect -p 2417 --due-in 5 --note "Needs the structural answer first"
 joist close RFI-3 answered -p 2417 --answer "Use 5/S-302."
 joist close SUB-4 revise-resubmit -p 2417 --note "Lap lengths"   # back to the submitter as revision 1
@@ -34,4 +34,4 @@ Closing actions: an RFI is `answered` or `withdrawn`; a submittal is
 `approved`, `approved-as-noted`, `rejected`, or `withdrawn`, and
 `revise-resubmit` keeps it open as its next revision with whoever submitted
 it. `pass` and `add` take parties as the team spells them (any case);
-`joist show` and `joist projects` say who is on it.
+`joist projects --json` lists each project's team.

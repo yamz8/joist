@@ -6,7 +6,8 @@ arch=('x86_64' 'aarch64')
 license=('MIT')
 # notify-send (libnotify) announces overdue items; Lintel lists and opens
 # the drawing sheets items link to.
-depends=('qt6-base' 'qt6-declarative' 'qt6-wayland' 'xdg-desktop-portal' 'libnotify')
+# Qt 6.7 for QStandardPaths::GenericStateLocation and Material's roundedScale.
+depends=('qt6-base>=6.7' 'qt6-declarative>=6.7' 'qt6-wayland' 'xdg-desktop-portal' 'libnotify')
 optdepends=('lintel: link items to drawing sheets')
 makedepends=('gcc' 'make')
 install=joist.install
