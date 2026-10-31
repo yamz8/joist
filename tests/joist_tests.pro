@@ -5,10 +5,10 @@ TEMPLATE = app
 
 INCLUDEPATH += ../src
 
-HEADERS += ../src/backend.h ../src/filepicker.h ../src/labels.h ../src/notifier.h ../src/pdfexport.h \
+HEADERS += ../src/backend.h ../src/cli.h ../src/filepicker.h ../src/labels.h ../src/notifier.h ../src/pdfexport.h \
            ../src/project.h ../src/theme.h ../src/translator.h
 # The real resources, so the tests see the catalogs the app ships.
 RESOURCES += ../src/resources.qrc
-SOURCES += joist_tests.cpp ../src/backend.cpp ../src/labels.cpp ../src/notifier.cpp ../src/pdfexport.cpp \
+SOURCES += joist_tests.cpp ../src/backend.cpp ../src/cli.cpp ../src/labels.cpp ../src/notifier.cpp ../src/pdfexport.cpp \
            ../src/project.cpp ../src/theme.cpp ../src/translator.cpp
 DEFINES += SRCDIR=\\\"$$PWD/../src\\\"

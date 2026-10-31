@@ -29,7 +29,10 @@ int fail(const QString &message) {
 
 struct Command {
     QCommandLineParser parser;
-    Command(const QString &name, const QString &description, const QStringList &arguments = {}) {
+    QString name;
+    QStringList arguments;
+    Command(const QString &name, const QString &description, const QStringList &arguments = {})
+        : name(name), arguments(arguments) {
         parser.setApplicationDescription(description);
         parser.addHelpOption();
         parser.addPositionalArgument(name, description, name);
@@ -43,6 +46,35 @@ struct Command {
     }
     bool wantsJson() const { return parser.isSet("json"); }
     QString argument(int index) const { return parser.positionalArguments().value(index + 1); }
+    // True, with the usage on stderr, when one of the first count arguments
+    // is missing, so a bare "joist pass" doesn't answer "There is no .".
+    bool missing(int count) const {
+        for (int i = 0; i < count && i < arguments.size(); ++i)
+            if (argument(i).trimmed().isEmpty()) {
+                QStringList usage;
+                for (const QString &word : arguments)
+                    usage.append("<" + word + ">");
+                fail(QString("Usage: joist %1 %2. joist %1 --help says more.").arg(name, usage.join(' ')));
+                return true;
+            }
+        return false;
+    }
+    // --due-in as a whole number of days, 0 or more; fallback when it isn't
+    // given. False, with an error, for anything else, which would otherwise
+    // read as 0 and make the item due today.
+    bool dueIn(int fallback, int *days) const {
+        *days = fallback;
+        if (!parser.isSet("due-in"))
+            return true;
+        bool ok = false;
+        const int value = parser.value("due-in").trimmed().toInt(&ok);
+        if (!ok || value < 0) {
+            fail(QString("--due-in is a number of days, 0 or more, not \"%1\".").arg(parser.value("due-in")));
+            return false;
+        }
+        *days = value;
+        return true;
+    }
 };
 
 // The named project, or the only one there is, opened in the backend.
@@ -196,6 +228,8 @@ int show(const QStringList &arguments) {
     command.project();
     command.json();
     command.parser.process(arguments);
+    if (command.missing(1))
+        return 1;
     Backend backend(nullptr);
     if (!openProject(backend, command))
         return 1;
@@ -235,6 +269,9 @@ int add(const QStringList &arguments) {
         return fail("The type is rfi or submittal.");
     if (command.argument(1).trimmed().isEmpty())
         return fail("Give it a title.");
+    int days = -1;
+    if (!command.dueIn(-1, &days))
+        return 1;
     Backend backend(nullptr);
     if (!openProject(backend, command))
         return 1;
@@ -243,7 +280,6 @@ int add(const QStringList &arguments) {
         return 1;
     if (command.parser.isSet("to") && (to = party(backend, command.parser.value("to"))).isEmpty())
         return 1;
-    const int days = command.parser.isSet("due-in") ? command.parser.value("due-in").toInt() : -1;
     const QString item = backend.addItem(type, command.argument(1), from, to, days);
     if (item.isEmpty())
         return fail(backend.error().isEmpty() ? "Could not add it." : backend.error());
@@ -261,6 +297,11 @@ int pass(const QStringList &arguments) {
     command.parser.addOption({"note", "Why, for the history", "text"});
     command.json();
     command.parser.process(arguments);
+    if (command.missing(2))
+        return 1;
+    int days = 0;
+    if (!command.dueIn(-1, &days))
+        return 1;
     Backend backend(nullptr);
     if (!openProject(backend, command))
         return 1;
@@ -271,9 +312,7 @@ int pass(const QStringList &arguments) {
     if (!backend.item(item)["open"].toBool())
         return fail(item + " is closed. Reopen it first with: joist reopen " + item);
     const QString type = backend.item(item)["type"].toString();
-    backend.passTo(item, to,
-                   command.parser.isSet("due-in") ? command.parser.value("due-in").toInt() : backend.defaultDays(type),
-                   command.parser.value("note"));
+    backend.passTo(item, to, days < 0 ? backend.defaultDays(type) : days, command.parser.value("note"));
     if (!backend.error().isEmpty())
         return fail(backend.error());
     return printItem(backend, item, command.wantsJson());
@@ -288,6 +327,9 @@ int close(const QStringList &arguments) {
     command.parser.addOption({"note", "A note for the history", "text"});
     command.json();
     command.parser.process(arguments);
+    // Without an action, the item's own list of them below says more.
+    if (command.missing(1))
+        return 1;
     Backend backend(nullptr);
     if (!openProject(backend, command))
         return 1;
@@ -313,6 +355,8 @@ int reopen(const QStringList &arguments) {
     command.project();
     command.json();
     command.parser.process(arguments);
+    if (command.missing(1))
+        return 1;
     Backend backend(nullptr);
     if (!openProject(backend, command))
         return 1;
@@ -330,6 +374,9 @@ int link(const QStringList &arguments) {
     command.project();
     command.json();
     command.parser.process(arguments);
+    // Without a sheet, the hint below on finding one says more.
+    if (command.missing(2))
+        return 1;
     Backend backend(nullptr);
     if (!openProject(backend, command))
         return 1;
@@ -337,11 +384,12 @@ int link(const QStringList &arguments) {
     if (item.isEmpty())
         return 1;
     const QFileInfo set(command.argument(1));
-    if (!set.exists())
+    if (!set.isFile())
         return fail(QString("%1 isn't there.").arg(command.argument(1)));
-    if (command.argument(2).isEmpty())
+    const QString sheet = command.argument(2).trimmed();
+    if (sheet.isEmpty())
         return fail("Name the sheet, such as A-101. lintel sheets set.pdf lists them.");
-    backend.addSheetLink(item, set.absoluteFilePath(), command.argument(2));
+    backend.addSheetLink(item, set.absoluteFilePath(), sheet);
     if (!backend.error().isEmpty())
         return fail(backend.error());
     return printItem(backend, item, command.wantsJson());
@@ -354,6 +402,8 @@ int exportPdf(const QStringList &arguments) {
     command.parser.addOption({{"o", "output"}, "The PDF to write", "file.pdf"});
     command.json();
     command.parser.process(arguments);
+    if (command.missing(1))
+        return 1;
     const QString output = command.parser.value("output");
     if (output.isEmpty())
         return fail("Say where to write it with -o file.pdf.");
@@ -404,7 +454,9 @@ int notify(const QStringList &arguments) {
         print(QJsonObject{{"announced", list}, {"overdue", int(overdue.size())}});
     } else {
         for (const Overdue &item : pending)
-            print(stdout, QString("%1\t%2\t%3\t%4 days late").arg(item.project, item.code, item.holder).arg(item.daysLate));
+            print(stdout, QString("%1\t%2\t%3\t%4")
+                              .arg(item.project, item.code, item.holder,
+                                   item.daysLate == 0 ? QString("due today") : QString("%1 days late").arg(item.daysLate)));
     }
     return 0;
 }

@@ -93,12 +93,14 @@ In the pass and review dialogs, `Up` / `Down` or a number picks, and
 
 ## Build
 
-Joist is C++ and Qt Quick, built with qmake.
+Joist is C++ and Qt Quick, built with qmake. It needs Qt 6.7 or later
+(`qt6-base` and `qt6-declarative` on Arch), and `notify-send` from libnotify
+for notifications.
 
 ```sh
 bin/build      # builds build/joist
 bin/test       # runs the tests offscreen
-bin/install    # builds and installs the package, so Joist is in the app launcher
+bin/install    # builds and installs the Arch package with makepkg, so Joist is in the app launcher
 ```
 
 ## License

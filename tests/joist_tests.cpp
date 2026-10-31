@@ -3,8 +3,11 @@
 #include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QtTest>
+#include <cstdio>
+#include <unistd.h>
 
 #include "backend.h"
+#include "cli.h"
 #include "filepicker.h"
 #include "labels.h"
 #include "notifier.h"
@@ -38,6 +41,41 @@ private:
         write(path, "#!/bin/sh\n" + body);
         QFile::setPermissions(path, QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
         return path;
+    }
+
+    // Runs a joist command against the projects in directory, as the shell
+    // would, and hands back its exit code and what it wrote to stdout and
+    // stderr.
+    struct Run {
+        int code = -1;
+        QString out, err;
+    };
+    static Run cli(const QString &directory, const QStringList &words)
+    {
+        qputenv("JOIST_PROJECTS", directory.toUtf8());
+        QTemporaryDir capture;
+        const QByteArray outPath = capture.filePath("out").toUtf8(), errPath = capture.filePath("err").toUtf8();
+        fflush(stdout);
+        fflush(stderr);
+        const int out = dup(1), err = dup(2);
+        FILE *outFile = freopen(outPath.constData(), "w", stdout);
+        FILE *errFile = freopen(errPath.constData(), "w", stderr);
+        Run run;
+        if (outFile && errFile)
+            run.code = runCli(QStringList{"joist"} + words);
+        fflush(stdout);
+        fflush(stderr);
+        dup2(out, 1);
+        dup2(err, 2);
+        ::close(out);
+        ::close(err);
+        qunsetenv("JOIST_PROJECTS");
+        QFile o(outPath), e(errPath);
+        if (o.open(QIODevice::ReadOnly))
+            run.out = QString::fromUtf8(o.readAll());
+        if (e.open(QIODevice::ReadOnly))
+            run.err = QString::fromUtf8(e.readAll());
+        return run;
     }
 
     const QDate today{2026, 10, 24};
@@ -365,6 +403,57 @@ private slots:
         item.closed = today;
         item.action = "approved-as-noted";
         QCOMPARE(Labels::status(item, today), QString("Approved as noted"));
+    }
+
+    void commandsRejectBadDays()
+    {
+        QTemporaryDir dir;
+        QCOMPARE(cli(dir.path(), {"new", "Clinic"}).code, 0);
+        // A word, or a negative count, used to slip through as "due today".
+        for (const char *days : {"abc", "-5", "3x", ""}) {
+            const Run run = cli(dir.path(), {"add", "rfi", "Slab", "--due-in", days});
+            QCOMPARE(run.code, 1);
+            QVERIFY2(run.err.contains("--due-in"), qPrintable(run.err));
+        }
+        QCOMPARE(cli(dir.path(), {"list", "--json"}).out.count("\"code\""), 0);
+
+        QCOMPARE(cli(dir.path(), {"add", "rfi", "Slab", "--due-in", "4"}).code, 0);
+        const QString due = QDate::currentDate().addDays(4).toString(Qt::ISODate);
+        QVERIFY(cli(dir.path(), {"show", "RFI-1"}).out.contains(due));
+
+        const Run bad = cli(dir.path(), {"pass", "RFI-1", "Owner", "--due-in", "soon"});
+        QCOMPARE(bad.code, 1);
+        QVERIFY(bad.err.contains("--due-in"));
+        const Run shown = cli(dir.path(), {"show", "RFI-1"});
+        QVERIFY2(shown.out.contains("Architect, due " + due), qPrintable(shown.out));
+
+        QCOMPARE(cli(dir.path(), {"pass", "RFI-1", "Owner", "--due-in", "0"}).code, 0);
+        QVERIFY(cli(dir.path(), {"show", "RFI-1"}).out.contains(
+            "Owner, due " + QDate::currentDate().toString(Qt::ISODate)));
+        // Due today reads as that, not "0 days late".
+        const Run notify = cli(dir.path(), {"notify", "--dry-run"});
+        QVERIFY2(notify.out.contains("RFI-001\tOwner\tdue today"), qPrintable(notify.out));
+    }
+
+    void commandsSayWhatIsMissing()
+    {
+        QTemporaryDir dir;
+        QCOMPARE(cli(dir.path(), {"new", "Clinic"}).code, 0);
+        QCOMPARE(cli(dir.path(), {"add", "rfi", "Slab"}).code, 0);
+        const QList<QStringList> commands{{"show"}, {"pass"}, {"pass", "RFI-1"}, {"close"},
+                                          {"reopen"}, {"link", "RFI-1"}, {"export", "-o", "x.pdf"}};
+        for (const QStringList &words : commands) {
+            const Run run = cli(dir.path(), words);
+            QCOMPARE(run.code, 1);
+            // Not "There is no ." or " isn't on the team".
+            QVERIFY2(run.err.startsWith("Usage: joist " + words.first()), qPrintable(run.err));
+        }
+        // A folder isn't a drawing set, and a blank sheet isn't a sheet.
+        QVERIFY(cli(dir.path(), {"link", "RFI-1", dir.path(), "A-101"}).err.contains("isn't there"));
+        const QString set = dir.filePath("set.pdf");
+        write(set, "%PDF-1.4\n");
+        QVERIFY(cli(dir.path(), {"link", "RFI-1", set, "  "}).err.contains("Name the sheet"));
+        QVERIFY(!cli(dir.path(), {"show", "RFI-1"}).out.contains("Sheet:"));
     }
 
     void bundledCatalogsAreValid()
